@@ -1,18 +1,34 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&display=swap');
+
+* {
+  box-sizing: border-box;
+  font-family: 'Cinzel', serif;
+  margin: 0;
+  padding: 0;
 }
 
 :root {
   /* ── Paleta Le Male Le Parfum ── */
-  --color-obsidian:    #0D0D0D;   /* Negro puro — fondos principales */
-  --color-charcoal:    #1C1C1C;   /* Negro suave — superficies secundarias */
-  --color-jet:         #2A2420;   /* Negro cálido — bordes, separadores */
-  --color-espresso:    #3B2A1A;   /* Marrón oscuro — hover, capas */
-  --color-bronze-dark: #7A6440;   /* Bronce opaco — texto secundario */
-  --color-gold:        #C8973A;   /* Oro principal — acentos, CTAs */
-  --color-gold-light:  #E8C06A;   /* Oro claro — headings, highlights */
+  --color-obsidian: #0D0D0D;
+  /* Negro puro — fondos principales */
+  --color-charcoal: #1C1C1C;
+  /* Negro suave — superficies secundarias */
+  --color-jet: #2A2420;
+  /* Negro cálido — bordes, separadores */
+  --color-espresso: #3B2A1A;
+  /* Marrón oscuro — hover, capas */
+  --color-bronze-dark: #7A6440;
+  /* Bronce opaco — texto secundario */
+  --color-gold: #C8973A;
+  /* Oro principal — acentos, CTAs */
+  --color-gold-light: #E8C06A;
+  /* Oro claro — headings, highlights */
+  --color-texto: var(--color-gold-light);
+  /* Texto principal — títulos */
+  --color-detalles: var(--color-gold);
+  /* Detalles — bordes, acentos */
+  --color-secundario: var(--color-bronze-dark);
+  /* Color secundario — hover, elementos secundarios */
 }
 
 
@@ -26,3 +42,156 @@ Variable         Rol                                                            
 --color-gold      Botones primarios, badges, links activos                                          #C8973A
 --color-gold-light Títulos principales, highlights de texto                                            #E8C06A
 */
+
+
+
+/* --- CONTACTO --- */
+
+#contacto {
+  background-color: var(--color-charcoal);
+  height: 100%;
+  padding: 20px;
+}
+
+#contacto h2 {
+  color: var(--color-gold-light);
+  font-size: 1em;
+  font-weight: bold;
+  letter-spacing: 2px;
+  text-shadow: 0 0 9px rgba(0, 0, 0, .7);
+}
+
+.formulario-contenedor {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: auto;
+}
+
+.formulario-contacto {
+  background: linear-gradient(145deg, rgba(10, 10, 10, 0.5), rgba(51, 51, 51, 0.8)), rgba(0, 0, 0, 0.2);
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(255, 255, 255, 0.1);
+  margin: 20px 0;
+  max-width: 600px;
+  padding: 20px;
+  transition: all 0.3s ease;
+  width: 30%;
+}
+
+.grupo-formulario {
+  margin-bottom: 2rem;
+  position: relative;
+  width: 100%;
+}
+
+.grupo-formulario input,
+.grupo-formulario textarea {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--color-gold);
+  color: #fff;
+  font-size: 1em;
+  margin-top: 1rem;
+  outline: none;
+  padding: 10px 0;
+  transition: all 0.3s ease;
+  width: 100%;
+}
+
+.grupo-formulario label {
+  color: #ccc;
+  font-size: 1em;
+  left: 0;
+  pointer-events: none;
+  position: absolute;
+  top: 10px;
+  transition: all 0.3s ease;
+}
+
+.grupo-formulario input:focus~label,
+.grupo-formulario input:valid~label,
+.grupo-formulario textarea:focus~label,
+.grupo-formulario textarea:valid~label {
+  color: var(--color-gold);
+  font-size: .8em;
+  top: -20px;
+}
+
+.grupo-formulario textarea {
+  min-height: 100px;
+  min-width: 100%;
+  resize: vertical;
+}
+
+.grupo-formulario textarea:focus {
+  border: none;
+  outline: none;
+}
+
+.borde-focus {
+  background-color: var(--color-gold);
+  bottom: 0;
+  height: 2px;
+  left: 0;
+  position: absolute;
+  transition: all 0.3s ease;
+  width: 0;
+}
+
+.grupo-formulario input:focus~.borde-focus,
+.grupo-formulario textarea:focus~.borde-focus {
+  width: 100%;
+}
+
+.boton-enviar {
+  align-items: center;
+  background: linear-gradient(145deg, var(--color-gold), var(--color-gold-light));
+  border: none;
+  border-radius: 50px;
+  color: #fff;
+  cursor: pointer;
+  display: flex;
+  font-size: 1em;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 50px;
+  overflow: hidden;
+  padding: 15px;
+  transition: all 0.3s ease;
+  width: 100%;
+}
+
+.boton-enviar:hover {
+  box-shadow: 0 7px 9px var(--color-bronze-dark);
+  color: var(--color-bronze-dark);
+  transform: translateY(-2px);
+}
+
+.boton-enviar:active {
+  transform: translateY(1px);
+}
+
+.btn-icon i {
+  color: #fff;
+  font-size: 1.2em;
+  transition: 0.3s ease;
+}
+
+.boton-enviar:hover .btn-icon i {
+  color: var(--color-bronze-dark);
+  transform: translateX(5px);
+}
+
+/* --- FOOTER --- */
+
+.footer {
+  background-color: var(--color-obsidian);
+  border-top: 1px solid var(--color-jet);
+  color: var(--color-gold-light);
+  font-size: 0.9em;
+  letter-spacing: 1px;
+  padding: 30px 20px;
+  text-align: center;
+}
