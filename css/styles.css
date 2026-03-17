@@ -1,0 +1,28 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+  /* ── Paleta Le Male Le Parfum ── */
+  --color-obsidian:    #0D0D0D;   /* Negro puro — fondos principales */
+  --color-charcoal:    #1C1C1C;   /* Negro suave — superficies secundarias */
+  --color-jet:         #2A2420;   /* Negro cálido — bordes, separadores */
+  --color-espresso:    #3B2A1A;   /* Marrón oscuro — hover, capas */
+  --color-bronze-dark: #7A6440;   /* Bronce opaco — texto secundario */
+  --color-gold:        #C8973A;   /* Oro principal — acentos, CTAs */
+  --color-gold-light:  #E8C06A;   /* Oro claro — headings, highlights */
+}
+
+
+/*
+Variable         Rol                                                                               Valor
+--color-obsidian  Fondo principal de la página o sección hero                                       #0D0D0D
+--color-charcoal  Fondos de tarjetas, navbars, modales                                               #1C1C1C
+--color-jet       Bordes finos, líneas divisorias                                                    #2A2420
+--color-espresso  Estado hover de botones y tarjetas                                                 #3B2A1A
+--color-bronze-dark Texto secundario, subtítulos, íconos                                             #7A6440
+--color-gold      Botones primarios, badges, links activos                                          #C8973A
+--color-gold-light Títulos principales, highlights de texto                                            #E8C06A
+*/
