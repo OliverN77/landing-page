@@ -1,8 +1,4 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&display=swap');
 
 :root {
   /* ── Paleta Le Male Le Parfum ── */
@@ -13,8 +9,9 @@
   --color-bronze-dark: #7A6440;   /* Bronce opaco — texto secundario */
   --color-gold:        #C8973A;   /* Oro principal — acentos, CTAs */
   --color-gold-light:  #E8C06A;   /* Oro claro — headings, highlights */
+  /* Fuentes */
+  --font-primary: 'Cinzel', serif;
 }
-
 
 /*
 Variable         Rol                                                                               Valor
@@ -26,3 +23,194 @@ Variable         Rol                                                            
 --color-gold      Botones primarios, badges, links activos                                          #C8973A
 --color-gold-light Títulos principales, highlights de texto                                            #E8C06A
 */
+
+/* Reset y base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-primary), serif;
+    background: var(--color-obsidian);
+    color: var(--color-gold-light);
+    overflow-x: hidden;
+}
+
+/* Hero layout */
+.hero {
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background: var(--color-obsidian);
+}
+
+/* Columna izquierda */
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 4rem;
+    max-width: 600px;
+}
+
+/* Eyebrow label */
+.eyebrow {
+    font-family: var(--font-primary);
+    font-weight: 400;
+    color: var(--color-bronze-dark);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.35em;
+    animation: fadeInUp 0.8s ease-out 0.1s both;
+}
+
+/* Título principal */
+.title {
+    font-family: var(--font-primary);
+    font-weight: 700;
+    color: var(--color-gold-light);
+    font-size: clamp(64px, 8vw, 96px);
+    line-height: 1;
+    margin: 1rem 0;
+    animation: fadeInUp 0.8s ease-out 0.25s both;
+}
+
+/* Subtítulo */
+.subtitle {
+    font-family: var(--font-primary);
+    font-weight: 400;
+    color: var(--color-gold);
+    font-size: clamp(22px, 3vw, 32px);
+    letter-spacing: 0.2em;
+    animation: fadeInUp 0.8s ease-out 0.4s both;
+}
+
+/* Separador decorativo */
+.divider {
+    width: 80px;
+    height: 1px;
+    background: var(--color-gold);
+    border: none;
+    margin: 2rem 0;
+    animation: fadeInUp 0.7s ease-out 0.5s both;
+}
+
+/* Descripción */
+.description {
+    font-family: var(--font-primary);
+    font-weight: 400;
+    color: var(--color-bronze-dark);
+    font-size: 13px;
+    line-height: 2;
+    letter-spacing: 0.08em;
+    max-width: 360px;
+    animation: fadeInUp 0.8s ease-out 0.6s both;
+}
+
+/* Botón CTA */
+.cta-button {
+    font-family: var(--font-primary);
+    font-weight: 600;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+    border: 1px solid var(--color-gold);
+    color: var(--color-gold);
+    background: transparent;
+    padding: 16px 48px;
+    cursor: pointer;
+    transition: all 0.35s ease;
+    margin-top: 2rem;
+    align-self: flex-start;
+    animation: fadeInUp 0.8s ease-out 0.75s both;
+}
+
+.cta-button:hover {
+    background: var(--color-gold);
+    color: var(--color-obsidian);
+}
+
+/* Detalle inferior */
+.detail {
+    font-family: var(--font-primary);
+    font-weight: 400;
+    color: var(--color-bronze-dark);
+    font-size: 10px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    opacity: 0.6;
+    margin-top: 2rem;
+    animation: fadeInUp 0.7s ease-out 0.9s both;
+}
+
+/* Columna derecha - imagen */
+.hero-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.hero-image img {
+    max-height: 520px;
+    width: auto;
+    filter: drop-shadow(0 20px 60px rgba(200, 151, 58, 0.15));
+    animation: fadeIn 1.2s ease-out 0.2s both, float 4.5s ease-in-out infinite alternate;
+}
+
+/* Animaciones */
+@keyframes fadeInUp {
+    from { 
+        opacity: 0; 
+        transform: translateY(30px); 
+    }
+    to   { 
+        opacity: 1; 
+        transform: translateY(0); 
+    }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+@keyframes float {
+    0%   { transform: translateY(0px); }
+    100% { transform: translateY(-18px); }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .hero {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto 1fr;
+        padding: 3rem 1.5rem;
+    }
+
+    .hero-content {
+        padding: 2rem 0;
+        text-align: center;
+        align-items: center;
+        max-width: 100%;
+    }
+
+    .hero-image {
+        order: -1;
+    }
+
+    .hero-image img {
+        max-height: 260px;
+    }
+
+    .divider {
+        margin: 2rem auto;
+    }
+
+    .cta-button {
+        align-self: center;
+    }
+}
+
