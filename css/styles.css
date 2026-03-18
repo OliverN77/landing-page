@@ -44,6 +44,7 @@ body {
     display: grid;
     grid-template-columns: 1fr 1fr;
     background: var(--color-obsidian);
+    margin: auto 4rem;
 }
 
 /* Columna izquierda */
@@ -187,7 +188,7 @@ body {
     .hero {
         grid-template-columns: 1fr;
         grid-template-rows: auto 1fr;
-        padding: 3rem 1.5rem;
+        padding: 3rem 0;
     }
 
     .hero-content {
